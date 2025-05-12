@@ -5,16 +5,17 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Detail = () => {
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState("S");
+  const {id} = useParams()
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
+    fetch(`https://dummyjson.com/products/${id}`)
       .then((res) => res.json())
-      .then((data) => setProduct(data.products[15]))
+      .then((data) => setProduct(data))
       .catch((err) => console.log("Xatolik:", err));
   }, []);
 

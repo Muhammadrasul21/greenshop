@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import { Link } from "react-router-dom";
 
 export default function PlantShop() {
   const [products, setProducts] = useState([]);
@@ -180,11 +181,12 @@ export default function PlantShop() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {currentItems.map((product) => (
-            <div
+            <Link
               key={product.id}
+              to={`/shop/${product.id}`}
               className="border p-4 rounded-xl shadow hover:shadow-lg transition"
             >
-              <img
+              <img                                                                        
                 src={product.thumbnail || product.images?.[0]}
                 alt={product.title}
                 className="w-full h-40 object-cover rounded"
@@ -214,7 +216,7 @@ export default function PlantShop() {
                   <FaHeart />
                 </button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
