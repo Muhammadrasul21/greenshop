@@ -5,7 +5,7 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    <div className="p-4">
+    <div className="p-4 container">
       <h2 className="text-xl font-bold mb-4">Savatchadagi Mahsulotlar</h2>
       
       {cartItems.length === 0 ? (
