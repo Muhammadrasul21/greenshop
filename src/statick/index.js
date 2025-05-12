@@ -1,3 +1,7 @@
+import first from "../assets/01.svg"
+import second from "../assets/02.svg"
+import third from "../assets/03.svg"
+import fourth from "../assets/04.svg"
 export const heroSlider = [
   {
     greetings: "WELCOME TO GREENSHOP",
@@ -31,3 +35,33 @@ export const footerDesc = [
   "Career",
   "Specials",
 ];
+export const postItems = [
+{
+    img:first,
+    date:"September 12  I Read in 6 minutes",
+    title: "Cactus & Succulent Care Tips",
+    desc: "Cacti are succulents are easy care plants for any home or patio. ",
+    more : "Read More"
+},
+{
+    img:second,
+    date:"September 12  I Read in 6 minutes",
+    title: "Cactus & Succulent Care Tips",
+    desc: "Cacti are succulents are easy care plants for any home or patio. ",
+    more : "Read More"
+},
+{
+    img:third,
+    date:"September 12  I Read in 6 minutes",
+    title: "Cactus & Succulent Care Tips",
+    desc: "Cacti are succulents are easy care plants for any home or patio. ",
+    more : "Read More"
+},
+{
+    img:fourth,
+    date:"September 12  I Read in 6 minutes",
+    title: "Cactus & Succulent Care Tips",
+    desc: "Cacti are succulents are easy care plants for any home or patio. ",
+    more : "Read More"
+}
+]
