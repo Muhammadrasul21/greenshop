@@ -2,9 +2,10 @@ import logo from "../assets/logo.svg";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
   const navLinkClass = ({ isActive }) =>
     isActive
       ? "text-[#46A358] font-semibold border-b-2 border-[#46A358] pb-2"
@@ -42,7 +43,9 @@ const Navbar = () => {
 
       <div className="flex gap-[30px] items-center">
         <CiSearch className="w-[20px] h-[20px]" />
-        <CiShoppingCart className="w-[20px] h-[20px]" />
+        <Link className="flex items-center cursor-pointer relative hover:text-[#46A358] transition duration-300 ease-in-out">
+          <CiShoppingCart className="w-[20px] h-[20px]" />
+        </Link>
         <button className="btn bg-[#46A358] text-white flex items-center gap-1 px-4 py-2 rounded">
           <IoIosLogOut />
           Log in

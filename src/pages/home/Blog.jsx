@@ -5,8 +5,8 @@ import { GoArrowRight } from "react-icons/go";
 const Blog = () => {
   return (
     <div className="container footer flex justify-between items-center">
-      {blogItems?.map((item) => (
-        <div className="flex items-center text-end">
+      {blogItems?.map((item, inx) => (
+        <div key={inx} className="flex items-center text-end">
           <img src={item.img} alt="" />
           <div className="flex flex-col gap-2">
             <p className="font-black text-[20px]">{item.title}</p>

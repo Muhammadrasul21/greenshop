@@ -13,8 +13,8 @@ const Posts = () => {
       </div>
 
       <div className="flex gap-[44px]">
-        {postItems?.map((item) => (
-          <div className="flex flex-col gap-2">
+        {postItems?.map((item, inx) => (
+          <div key={inx} className="flex flex-col gap-2">
             <img src={item.img} alt="" />
 
             <div>
