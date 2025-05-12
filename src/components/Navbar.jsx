@@ -3,8 +3,11 @@ import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
+    const cartItems = useSelector((state) => state.cart.items);
 
   const navLinkClass = ({ isActive }) =>
     isActive
@@ -43,8 +46,11 @@ const Navbar = () => {
 
       <div className="flex gap-[30px] items-center">
         <CiSearch className="w-[20px] h-[20px]" />
-        <Link className="flex items-center cursor-pointer relative hover:text-[#46A358] transition duration-300 ease-in-out">
+        <Link to={"/cart"} className="flex items-center cursor-pointer relative hover:text-[#46A358] transition duration-300 ease-in-out">
           <CiShoppingCart className="w-[20px] h-[20px]" />
+           <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs px-1 rounded-full w-4 h-4 flex items-center justify-center">
+          {cartItems.length}
+        </span>
         </Link>
         <button className="btn bg-[#46A358] text-white flex items-center gap-1 px-4 py-2 rounded">
           <IoIosLogOut />

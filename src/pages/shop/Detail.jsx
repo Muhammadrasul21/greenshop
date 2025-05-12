@@ -5,6 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Detail = () => {
   const [product, setProduct] = useState(null);
@@ -104,9 +105,11 @@ const Detail = () => {
             </div>
             <div className="flex gap-[10px]">
               <button className="btn">BUY NOW</button>
-              <button className="border border-[#46A358] text-[#46A358] p-x-[17px] py-[7px] rounded-[6px]">
-                ADD TO CART
-              </button>
+              <Link to={"/checkout"}>
+                <button className="border border-[#46A358] text-[#46A358] p-x-[17px] py-[7px] rounded-[6px]">
+                  ADD TO CART
+                </button>
+              </Link>
               <button className="border border-[#46A358] text-[#46A358] button">
                 <CiHeart />
               </button>

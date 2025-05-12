@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/home/Home";
 import Shop from "./pages/shop/Shop";
 import Checkout from "./components/Checkout";
+import Cart from "./pages/home/Cart";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/cart" element={<Cart/>} />
         </Routes>
       </Layout>
     </Router>
