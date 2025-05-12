@@ -1,3 +1,4 @@
+import Blog from "./Blog";
 import Hero from "./Hero";
 import Posts from "./Posts";
 
@@ -5,7 +6,8 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Posts/>
+      <Blog />
+      <Posts />
     </div>
   );
 };

@@ -22,8 +22,8 @@
   padding: 7px 17px;
   border-radius: 6px;
   color: white;
+  background-color: #46a358;
 }
-
 .pdn {
   padding: 5px;
   border-radius: 8px 0px 0px 8px;
@@ -46,4 +46,9 @@
 .greenshop {
   margin-top: 24px;
   margin-bottom: 33px;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 8px;
 }
