@@ -10,7 +10,7 @@ import { Link, useParams } from "react-router-dom";
 const Detail = () => {
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState("S");
-  const {id} = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)

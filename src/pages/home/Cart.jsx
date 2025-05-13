@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from '../../redux/cartSlice'; // path to your cartSlice
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../../redux/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -13,14 +13,16 @@ const Cart = () => {
   return (
     <div className="p-4 container">
       <h2 className="text-xl font-bold mb-4">Savatchadagi Mahsulotlar</h2>
-      
+
       {cartItems.length === 0 ? (
         <p>Savatcha hozircha bo'sh.</p>
       ) : (
         <ul className="space-y-2">
           {cartItems.map((item) => (
             <li key={item.id} className="border p-3 rounded shadow-sm">
-              <p><strong>{item.name}</strong></p>
+              <p>
+                <strong>{item.name}</strong>
+              </p>
               <p>Narxi: ${item.price}</p>
               <p>Miqdori: {item.quantity}</p>
               <button

@@ -15,8 +15,7 @@ export default function PlantShop() {
   const [search, setSearch] = useState("");
   const [wishlist, setWishlist] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-const cartItems = useSelector((state) => state.cart.items);
-
+  const cartItems = useSelector((state) => state.cart.items);
 
   const itemsPerPage = 12;
   const dispatch = useDispatch();
@@ -184,15 +183,15 @@ const cartItems = useSelector((state) => state.cart.items);
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {currentItems.map((product) => (
             <div
-              key={product.id}    
+              key={product.id}
               className="border p-4 rounded-xl shadow hover:shadow-lg transition"
             >
               <Link to={`/shop/${product.id}`}>
-              <img                                                                        
-                src={product.thumbnail || product.images?.[0]}
-                alt={product.title}
-                className="w-full h-40 object-cover rounded"
-              />
+                <img
+                  src={product.thumbnail || product.images?.[0]}
+                  alt={product.title}
+                  className="w-full h-40 object-cover rounded"
+                />
               </Link>
               <h4 className="mt-2 font-semibold">{product.title}</h4>
               <p className="text-green-600 font-bold">${product.price}</p>
@@ -206,18 +205,18 @@ const cartItems = useSelector((state) => state.cart.items);
                 </p>
               )}
               <div className="flex justify-between items-center mt-2">
-               <button
-  onClick={() => handleAddToCart(product)}
-  className="text-green-600 hover:text-green-800"
->
-  <FaShoppingCart
-    className={`p-1 rounded ${
-      cartItems.some((item) => item.id === product.id)
-        ? "bg-green-600 text-white"
-        : "bg-white text-green-600"
-    }`}
-  />
-</button>
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="text-green-600 hover:text-green-800"
+                >
+                  <FaShoppingCart
+                    className={`p-1 rounded ${
+                      cartItems.some((item) => item.id === product.id)
+                        ? "bg-green-600 text-white"
+                        : "bg-white text-green-600"
+                    }`}
+                  />
+                </button>
 
                 <button
                   onClick={() => toggleWishlist(product.id)}
