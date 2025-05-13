@@ -1,8 +1,10 @@
 import React from "react";
-import { Button, Input, Form, Select, InputNumber } from "antd";
+import { Button, Input, Form, Select } from "antd";
+import { FaRegCircle } from "react-icons/fa";
+import { useSelector } from 'react-redux';
+
 const { Option } = Select;
 
-// Telefon raqam uchun prefix selector
 const prefixSelector = (
   <Form.Item name="prefix" noStyle>
     <Select style={{ width: 70 }}>
@@ -12,7 +14,6 @@ const prefixSelector = (
   </Form.Item>
 );
 
-// Submit button faqat valid bo‘lsa ishlaydi
 const SubmitButton = ({ form, children }) => {
   const [submittable, setSubmittable] = React.useState(false);
   const values = Form.useWatch([], form);
@@ -33,9 +34,12 @@ const SubmitButton = ({ form, children }) => {
 
 const App = () => {
   const [form] = Form.useForm();
+    const cartItems = useSelector((state) => state.cart.items);
+  
 
   return (
-    <div className="container flex flex-col gap-4">
+    <div className="container flex justify-between">
+      <div className="flx flex-col gap-4">
       <div className="flex items-center gap-2 mt-[36px] mb-[36px]">
         <p className="font-semibold">Home</p>
         <p>/ Shop</p>
@@ -137,6 +141,48 @@ const App = () => {
           <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
         </Form.Item>
       </Form>
+      <div className="flex flex-col gap-[55px]">
+         <p className="flex items-center font-medium text-[15px] gap-2"><FaRegCircle className="text-[#46A358]"/>Ship to a different address?</p>
+          <div className="flex flex-col gap-2">
+            <p>Order notes (optional)</p>
+            <textarea name="a" id="" className="border border-[#EAEAEA] w-[350px] h-[152px]"></textarea>
+          </div>
+      </div>
+      </div>
+        
+      <div className="w-[410px]">
+       <p className="font-bold text-[17px]">Your Order</p>
+       <div className="flex justify-between border-b border-[#46A35880]">
+        <p className="font-medium">Products</p>
+        <p className="font-medium">Subtotal</p>
+       </div>
+       <div>
+        {
+          cartItems.length === 0 ? (
+            <p>Savatcha bosh</p>
+          ) : (
+            <div>
+              {
+                cartItems.map((item, index)=>(
+                  <div key={index} className="flex items-center justify-between">
+                    <div className="flex">
+                    <img src={item.thumbnail} alt={item.title}  className="w-[70px] h-[70px]"/>
+                    <div className="flex flex-col">
+                    <p className="font-medium max-w-[114px]">{item.title}</p>
+                    <p className="text-[14px] text-[#727272]">Sku: {item.sku}</p>
+                    </div>
+                    </div>
+
+                    <p className="text-[14px] text-[#727272]">x{item.stock}</p>
+                    <p className="text-[#46A358] text-[18px] font-bold">${item.price}</p>
+                  </div>
+                ))
+              }
+            </div>
+          )
+        }
+       </div>
+      </div>
     </div>
   );
 };
