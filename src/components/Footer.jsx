@@ -85,7 +85,7 @@ const Footer = () => {
           <LocationOnOutlinedIcon className="text-[#46A358]" />
           70 West Buckingham Ave. Farmingdale, NY 11735
         </p>
-        <p className="flex gap-[10px] font-inter font-bold items-center text-[#3D3D3D] text-[16x] leading-[22px]">
+        <p className="flex gap-[10px] font-inter font-bold items-center text-[#3D3D3D] text-[16px] leading-[22px]">
           <EmailTwoToneIcon className="text-[#46A358]" />
           contact@greenshop.com
         </p>
